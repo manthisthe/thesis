@@ -1,0 +1,11 @@
+entity Task5 {
+	participantName String required	
+	sex Sex required
+	age Integer required     
+	taskCompletionTimeSeconds Integer
+	errors Integer
+}
+
+enum Sex {
+    M, F
+}

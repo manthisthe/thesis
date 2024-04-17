@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-task-completion-time-2-heading" data-cy="TaskCompletionTime2CreateUpdateHeading">
+        Account registration (Task Completion Time 2) - New try
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_participantName">Participant Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="participantName"
+            id="field_participantName"
+            data-cy="participantName"
+            formControlName="participantName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sex">Sex</label>
+          <select class="form-control" name="sex" formControlName="sex" id="field_sex" data-cy="sex">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let sex of sexValues" [value]="sex">{{ sex }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_age">Age</label>
+          <input type="number" class="form-control" name="age" id="field_age" data-cy="age" formControlName="age" />
+        </div>
+
+        <!--         <div class="mb-3">
+          <label class="form-label" for="field_timeSeconds">Time Seconds</label>
+          <input
+            type="number"
+            class="form-control"
+            name="timeSeconds"
+            id="field_timeSeconds"
+            data-cy="timeSeconds"
+            formControlName="timeSeconds"
+          />
+        </div> -->
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>cancel</span>
+        </button>
+
+        <!-- <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Translation missing for entity.action.save</span>
+        </button> -->
+      </div>
+    </form>
+    <button class="btn btn-primary" (click)="goToRegister()">
+      <span>Start</span>
+    </button>
+  </div>
+</div>

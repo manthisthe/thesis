@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="task4">
+      <h2 data-cy="task4DetailsHeading"><span>Task 4</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Translation missing for global.field.id</span></dt>
+        <dd>
+          <span>{{ task4.id }}</span>
+        </dd>
+        <dt><span>Participant Name</span></dt>
+        <dd>
+          <span>{{ task4.participantName }}</span>
+        </dd>
+        <dt><span>Sex</span></dt>
+        <dd>
+          <span>{{ task4.sex }}</span>
+        </dd>
+        <dt><span>Age</span></dt>
+        <dd>
+          <span>{{ task4.age }}</span>
+        </dd>
+        <dt><span>Task Completion Time Seconds</span></dt>
+        <dd>
+          <span>{{ task4.taskCompletionTimeSeconds }}</span>
+        </dd>
+        <dt><span>Errors</span></dt>
+        <dd>
+          <span>{{ task4.errors }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Translation missing for entity.action.back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/task-4', task4.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Translation missing for entity.action.edit</span>
+      </button>
+    </div>
+  </div>
+</div>

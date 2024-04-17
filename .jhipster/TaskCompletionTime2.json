@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20231123205225",
+  "entityTableName": "task_completion_time_2",
+  "fields": [
+    {
+      "fieldName": "participantName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sex",
+      "fieldType": "Sex",
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "timeSeconds",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "TaskCompletionTime2",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20231123205225",
+  "entityTableName": "task_1_visibility",
+  "fields": [
+    {
+      "fieldName": "participantName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sex",
+      "fieldType": "Sex",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "timecompletionTimeSeconds",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "errors",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taskCompleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Task1Visibility",
+  "relationships": [],
+  "searchEngine": "no"
+}

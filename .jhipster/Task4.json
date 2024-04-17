@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20231123205225",
+  "entityTableName": "task_4",
+  "fields": [
+    {
+      "fieldName": "participantName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sex",
+      "fieldType": "Sex",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "taskCompletionTimeSeconds",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "errors",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Task4",
+  "relationships": [],
+  "searchEngine": "no"
+}

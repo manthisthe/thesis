@@ -1,0 +1,107 @@
+<div>
+  <h2 id="page-heading" data-cy="TaskCompletionTime2Heading">
+    <span>Account registration (Task Completion Time 2) </span>
+
+    <div class="d-flex justify-content-end">
+      <!-- <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button> -->
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-task-completion-time-2"
+        [routerLink]="['/task-completion-time-2/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span>New try</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="taskCompletionTime2s?.length === 0">
+    <span>No Task Completion Time 2 S found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="taskCompletionTime2s && taskCompletionTime2s.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <!-- <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span>Translation missing for global.field.id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th> -->
+          <th scope="col" jhiSortBy="participantName">
+            <div class="d-flex">
+              <span>Participant Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sex">
+            <div class="d-flex">
+              <span>Sex</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="age">
+            <div class="d-flex">
+              <span>Age</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="timeSeconds">
+            <div class="d-flex">
+              <span>Time Seconds</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let taskCompletionTime2 of taskCompletionTime2s; trackBy: trackId" data-cy="entityTable">
+          <!--         <td>
+            <a [routerLink]="['/task-completion-time-2', taskCompletionTime2.id, 'view']">{{ taskCompletionTime2.id }}</a>
+          </td> -->
+          <td>{{ taskCompletionTime2.participantName }}</td>
+          <td>{{ taskCompletionTime2.sex }}</td>
+          <td>{{ taskCompletionTime2.age }}</td>
+          <td>{{ taskCompletionTime2.timeSeconds }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <!-- <a
+                [routerLink]="['/task-completion-time-2', taskCompletionTime2.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">Translation missing for entity.action.view</span>
+              </a>
+
+              <a
+                [routerLink]="['/task-completion-time-2', taskCompletionTime2.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Translation missing for entity.action.edit</span>
+              </a> -->
+
+              <!-- <button type="submit" (click)="delete(taskCompletionTime2)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Translation missing for entity.action.delete</span>
+              </button> -->
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
